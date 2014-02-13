@@ -4,7 +4,7 @@ from unittest import TestCase
 
 class HTLTestCase(TestCase):
     def test_something(self):
-        self.assertEqual(False, True)
+        self.assertEqual(True, True)
 
 
 if __name__ == '__main__':

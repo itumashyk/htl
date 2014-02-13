@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name='ocr-system' content='tesseract 3.02.01' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "zopu2.png"; bbox 0 0 753 142; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 31 24 182 39">
+    <p class='ocr_par' dir='ltr' id='par_1' title="bbox 31 24 182 39">
+     <span class='ocr_line' id='line_1' title="bbox 31 24 182 39"><span class='ocrx_word' id='word_1' title="bbox 31 25 70 39">Dear</span> <span class='ocrx_word' id='word_2' title="bbox 82 25 108 39">Mr‘</span> <span class='ocrx_word' id='word_3' title="bbox 121 24 182 39">Grover:</span> 
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_2_2' title="bbox 30 64 736 123">
+    <p class='ocr_par' dir='ltr' id='par_2' title="bbox 30 64 736 123">
+     <span class='ocr_line' id='line_2' title="bbox 31 64 715 85"><span class='ocrx_word' id='word_4' title="bbox 31 64 45 79"><strong>If</strong></span> <span class='ocrx_word' id='word_5' title="bbox 55 64 108 82">you&#39;ve</span> <span class='ocrx_word' id='word_6' title="bbox 119 65 157 79">been</span> <span class='ocrx_word' id='word_7' title="bbox 169 64 229 83">looking</span> <span class='ocrx_word' id='word_8' title="bbox 239 65 263 79">for</span> <span class='ocrx_word' id='word_9' title="bbox 274 69 283 80"><strong>a</strong></span> <span class='ocrx_word' id='word_10' title="bbox 293 65 372 83">reporting</span> <span class='ocrx_word' id='word_11' title="bbox 382 65 413 80">tool</span> <span class='ocrx_word' id='word_12' title="bbox 423 65 456 80">that</span> <span class='ocrx_word' id='word_13' title="bbox 467 65 518 80">allows</span> <span class='ocrx_word' id='word_14' title="bbox 528 70 571 80">users</span> <span class='ocrx_word' id='word_15' title="bbox 582 68 598 80">to</span> <span class='ocrx_word' id='word_16' title="bbox 609 68 660 81">create</span> <span class='ocrx_word' id='word_17' title="bbox 670 68 715 85">great</span> 
+     </span>
+     <span class='ocr_line' id='line_3' title="bbox 31 84 736 105"><span class='ocrx_word' id='word_18' title="bbox 31 84 91 103">looking</span> <span class='ocrx_word' id='word_19' title="bbox 101 87 160 103">reports</span> <span class='ocrx_word' id='word_20' title="bbox 170 84 233 103">quickly,</span> <span class='ocrx_word' id='word_21' title="bbox 245 90 262 100">as</span> <span class='ocrx_word' id='word_22' title="bbox 273 85 305 100">well</span> <span class='ocrx_word' id='word_23' title="bbox 316 90 333 100">as</span> <span class='ocrx_word' id='word_24' title="bbox 343 85 423 104">providing</span> <span class='ocrx_word' id='word_25' title="bbox 433 85 458 100">the</span> <span class='ocrx_word' id='word_26' title="bbox 469 86 526 100">control</span> <span class='ocrx_word' id='word_27' title="bbox 537 86 567 100">and</span> <span class='ocrx_word' id='word_28' title="bbox 578 86 655 101">industrial</span> <span class='ocrx_word' id='word_29' title="bbox 667 86 736 105">strength</span> 
+     </span>
+     <span class='ocr_line' id='line_4' title="bbox 30 104 548 123"><span class='ocrx_word' id='word_30' title="bbox 30 105 97 119">features</span> <span class='ocrx_word' id='word_31' title="bbox 109 104 141 119">that</span> <span class='ocrx_word' id='word_32' title="bbox 152 109 171 119">an</span> <span class='ocrx_word' id='word_33' title="bbox 183 104 200 119">IS</span> <span class='ocrx_word' id='word_34' title="bbox 211 105 310 123">professional</span> <span class='ocrx_word' id='word_35' title="bbox 321 105 444 120">demandsmlook</span> <span class='ocrx_word' id='word_36' title="bbox 455 110 474 120">no</span> <span class='ocrx_word' id='word_37' title="bbox 485 105 548 120">further!</span> 
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

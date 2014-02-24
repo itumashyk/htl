@@ -5,7 +5,7 @@ import json
 from json import JSONEncoder
 
 __all__ = ['HTLDoc', 'HTLPage', 'HTLArea', 'HTLPar', 'HTLLine', 'HTLWord',
-           'dump', 'dumps']
+           'HTLStub', 'dump', 'dumps']
 
 
 class HTLDoc(object):
@@ -45,11 +45,12 @@ class HTLBase(object):
         self._type = None
         self._box = None
         self._content_text = None
+        self._tag = None
         self._children = []
 
     def __repr__(self):
-        return '<HTL {0} with box: {1}, content_text: "{2}">'.\
-            format(self.type,  self.box, self.content_text)
+        return '<HTL {0} with box: {1}, content_text: "{2}", tag: {3}>'.\
+            format(self.type,  self.box, self.content_text, self.tag)
 
     @property
     def type(self):
@@ -69,6 +70,14 @@ class HTLBase(object):
 
     def add_child(self, child):
         self._children.append(child)
+
+    @property
+    def tag(self):
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        self._tag = tag
 
 
 class HTLPage(HTLBase):
@@ -120,6 +129,11 @@ class HTLWord(HTLBase):
     def char_info(self):
         return self._char_info
 
+class HTLStub(HTLBase):
+    def __init__(self, tag):
+        super().__init__()
+        self._type = 'stub'
+        self._tag = tag
 
 class HTLEncoder(JSONEncoder):
     def default(self, o):

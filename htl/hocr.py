@@ -6,6 +6,7 @@ __all__ = ['HOCRParser']
 
 from html.parser import HTMLParser
 from .model import *
+import re
 
 
 class HOCRParser (HTMLParser):
@@ -17,6 +18,7 @@ class HOCRParser (HTMLParser):
     _LINE_CLASSES = ('ocr_line', 'ocrx_line')
     _WORD_CLASSES = ('ocrx_word')
     _STACK_IGNORED_TAGS = ('meta', 'img', 'br')
+    _BBOX_RE = re.compile(r'\bbbox\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)')
 
     def __init__(self, verbose=False):
         super().__init__()
@@ -28,30 +30,37 @@ class HOCRParser (HTMLParser):
         if self._verbose:
             print(*objects)
 
-    def _parse_start_of_class(self, tag, hocr_class):
+    def _parse_start_of_class(self, tag, hocr_class, attrs):
+        bbox = self._get_bbox(attrs)
+
         if hocr_class in self._PAGE_CLASSES:
-            page = HTLPage([])
+            page = HTLPage(bbox)
             page.tag = tag
             self._pages.append(page)
             self._tags_stack.append(page)
 
         elif hocr_class in self._AREA_CLASSES:
-            area = HTLArea([])
+            area = HTLArea(bbox)
             area.tag = tag
+            self._find_first_non_stub().add_child(area)
             self._tags_stack.append(area)
 
         elif hocr_class in self._PAR_CLASSES:
-            par = HTLPar([])
+            par = HTLPar(bbox)
             par.tag = tag
+            self._find_first_non_stub().add_child(par)
             self._tags_stack.append(par)
 
         elif hocr_class in self._LINE_CLASSES:
-            line = HTLLine([], '')
+            line = HTLLine(bbox, '')
             line.tag = tag
+            self._find_first_non_stub().add_child(line)
             self._tags_stack.append(line)
+
         elif hocr_class in self._WORD_CLASSES:
-            word = HTLWord([], '')
+            word = HTLWord(bbox, '')
             word.tag = tag
+            self._find_first_non_stub().add_child(word)
             self._tags_stack.append(word)
         else:
             self._log('hOCR class ignored:', hocr_class)
@@ -61,13 +70,31 @@ class HOCRParser (HTMLParser):
         if tag in self._STACK_IGNORED_TAGS:
             return True
 
+    def _find_first_non_stub(self):
+        for element in reversed(self._tags_stack):
+            if not isinstance(element, HTLStub):
+                return element
+
+        return None
+
+    def _get_bbox(self, attrs):
+        data_str = attrs.get('title')
+        if data_str:
+            match = self._BBOX_RE.search(data_str)
+            if match:
+                return [int(x) for x in match.groups()]
+            else:
+                return []
+        else:
+            return []
+
     def handle_starttag(self, tag, attrs):
 
         attrs_dict = dict(attrs)
         hocr_class = attrs_dict.get('class')
 
         if hocr_class:
-            self._parse_start_of_class(tag, hocr_class)
+            self._parse_start_of_class(tag, hocr_class, attrs_dict)
             return
 
         if not self._handle_special_start_tag(tag, attrs):
@@ -84,4 +111,17 @@ class HOCRParser (HTMLParser):
 
 
     def handle_data(self, data):
-        pass
+        if data.strip() == '':
+            return
+
+        first_non_stub = self._find_first_non_stub()
+        if first_non_stub:
+            self._find_first_non_stub().append_text(data)
+        else:
+            self._log('Ignored text:', repr(data))
+
+    def feed(self, data):
+        super().feed(data)
+        if len(self._tags_stack) != 0:
+            self._log('Unclosed tag found')
+        return HTLDoc('', self._pages)

@@ -64,6 +64,16 @@ class HTLBase(object):
     def content_text(self):
         return self._content_text
 
+    @content_text.setter
+    def content_text(self, text):
+        self._content_text = text
+
+    def append_text(self, text):
+        if self._content_text:
+            self._content_text += text
+        else:
+            self._content_text = text
+
     @property
     def children(self):
         return self._children
@@ -120,7 +130,7 @@ class HTLLine(HTLBase):
 class HTLWord(HTLBase):
     def __init__(self, box, content_text, char_info=None):
         super().__init__()
-        self._type = 'line'
+        self._type = 'word'
         self._box = box
         self._content_text = content_text
         self._char_info = char_info

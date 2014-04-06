@@ -13,7 +13,13 @@ class MyTestCase(TestCase):
 
     def test_parsing2(self):
         parser = HOCRParser(True)
-        htl_doc = parser.feed(open('data/mr-grover2.hocr',
+        htl_doc = parser.feed(open('data/text-linux1.hocr',
+                                   'r', encoding='utf-8').read())
+        print(model.dumps(htl_doc))
+
+    def test_parsing3(self):
+        parser = HOCRParser(True)
+        htl_doc = parser.feed(open('data/text-linux2.hocr',
                                    'r', encoding='utf-8').read())
         print(model.dumps(htl_doc))
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name='ocr-system' content='tesseract 3.02.01' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "text-linux.png"; bbox 0 0 494 227; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 271 38 453 51">
+    <p class='ocr_par' dir='ltr' id='par_1' title="bbox 271 38 453 51">
+     <span class='ocr_line' id='line_1' title="bbox 271 38 453 51"><span class='ocrx_word' id='word_1' title="bbox 271 39 345 51">Contents</span> <span class='ocrx_word' id='word_2' title="bbox 351 39 371 51">A:</span> <span class='ocrx_word' id='word_3' title="bbox 380 43 387 51"><strong>a</strong></span> <span class='ocrx_word' id='word_4' title="bbox 396 38 453 51">Glance</span> 
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_2_2' title="bbox 31 91 188 155">
+    <p class='ocr_par' dir='ltr' id='par_2' title="bbox 31 91 188 155">
+     <span class='ocr_line' id='line_2' title="bbox 31 91 188 119"><span class='ocrx_word' id='word_5' title="bbox 31 91 188 119">Advanced</span> 
+     </span>
+     <span class='ocr_line' id='line_3' title="bbox 33 129 126 155"><span class='ocrx_word' id='word_6' title="bbox 33 129 126 155">Linux</span> 
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_3_3' title="bbox 33 167 255 202">
+    <p class='ocr_par' dir='ltr' id='par_3' title="bbox 33 167 255 202">
+     <span class='ocr_line' id='line_4' title="bbox 33 167 255 202"><span class='ocrx_word' id='word_7' title="bbox 33 167 255 202">Programming</span> 
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_4_4' title="bbox 283 62 465 227">
+    <p class='ocr_par' dir='ltr' id='par_4' title="bbox 283 62 465 227">
+     <span class='ocr_line' id='line_5' title="bbox 283 62 465 227"><span class='ocrx_word' id='word_8' title="bbox 283 62 465 227"> </span> 
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

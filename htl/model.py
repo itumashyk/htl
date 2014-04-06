@@ -3,6 +3,7 @@
 
 import json
 from json import JSONEncoder
+import zlib
 
 __all__ = ['HTLDoc', 'HTLPage', 'HTLArea', 'HTLPar', 'HTLLine', 'HTLWord',
            'HTLStub', 'dump', 'dumps']
@@ -126,6 +127,10 @@ class HTLLine(HTLBase):
     def char_info(self):
         return self._char_info
 
+    @char_info.setter
+    def char_info(self, char_info):
+        self._char_info = char_info
+
 
 class HTLWord(HTLBase):
     def __init__(self, box, content_text, char_info=None):
@@ -138,6 +143,14 @@ class HTLWord(HTLBase):
     @property
     def char_info(self):
         return self._char_info
+
+    @property
+    def char_info(self):
+        return self._char_info
+
+    @char_info.setter
+    def char_info(self, char_info):
+        self._char_info = char_info
 
 class HTLStub(HTLBase):
     def __init__(self, tag):
@@ -184,7 +197,5 @@ def dumps(htl_obj, compact=False):
     return json.dumps(htl_obj, cls=HTLEncoder, separators=(',', ':'), ensure_ascii=False)
 
 
-def dump(htl_obj, fp, compact=False):
-    if not compact:
-        return json.dump(htl_obj, fp, cls=HTLEncoder, indent=2, ensure_ascii=False)
-    return json.dump(htl_obj, fp, cls=HTLEncoder, separators=(',', ':'), ensure_ascii=False)
+def dump(htl_obj, fp):
+    return fp.write(zlib.compress(bytes(dumps(htl_obj, True), "UTF-8"), 9))
